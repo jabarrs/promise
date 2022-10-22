@@ -1,7 +1,7 @@
 const searchButton = document.querySelector('.search-button');
 searchButton.addEventListener('click', function () {
   const inputKeyword = document.querySelector('.input-keyword');
-  axios('https://newsapi.org/v2/everything?from=2022-08-19&to=2022-08-19&sortBy=popularity&apiKey=5682dc34a6e24dc28ee940c3a932a702=' + inputKeyword.value).then((n) => {
+  axios('https://newsapi.org/v2/everything?apiKey=5682dc34a6e24dc28ee940c3a932a702&q=' + inputKeyword.value).then((n) => {
     console.log(n.data);
     const news = n.data.articles;
     let cards = '';
